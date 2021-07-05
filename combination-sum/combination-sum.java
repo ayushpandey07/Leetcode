@@ -11,7 +11,10 @@ class Solution {
         else if (target ==0) res.add(new ArrayList<>(temp));
         else{
             for(int i =s ;i <candidates.length ;i++){
+                if( target-candidates[i] < 0) break;
+
                 temp.add(candidates[i]);
+                System.out.println(temp);
                 helper(candidates , temp ,res , i  , target-candidates[i]);
                 temp.remove(temp.size()-1);
             }
